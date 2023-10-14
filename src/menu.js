@@ -5,6 +5,7 @@ export class ContextMenu extends Menu {
         super(selector);
     }
 
+    // Opens context menu
     open(event) {
         const {clientX: cX, clientY: cY} = event;
 
@@ -15,9 +16,11 @@ export class ContextMenu extends Menu {
         this.el.classList.add('open');
     }
 
+    // Closes context menu
     close() {
         this.el.classList.remove('open');
     }
 
+    // Add a new module to context menu
     add() {}
 }
