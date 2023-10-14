@@ -46,6 +46,7 @@ body {
 }
 
 .result-modal {
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,5 +104,20 @@ body {
     box-shadow: 0px 0px 20px darkorange;
     border: 2px solid darkorange;
     border-radius: 20px;
+
+    transition: 0.3s;
+}
+
+.inner-img:hover {
+    transform: scale(0.95);
+}
+
+footer {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    text-shadow: 0px 0px 5px darkorange;
+    padding-top: 20px;
+      
 
 }

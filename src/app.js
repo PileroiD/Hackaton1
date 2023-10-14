@@ -1,6 +1,7 @@
 import { Timer } from './modules/timer.module';
 import { ClicksModule } from './modules/clicks.module';
 import { ContextMenu } from './menu';
+import { BackgroundModule } from './modules/background.module'; // фон-картинка
 import './styles.css';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,12 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  
   const clickFeature = new ClicksModule('click', 'Click analytics');
   menu.append(clickFeature.toHTML());
 
   const timer = new Timer('timer', 'Timer');
   menu.append(timer.toHTML());
+
+  // фон-картинка
+  const changeImage = new BackgroundModule('Change Style', 'Change Style');
+  menu.append(changeImage.toHTML());
 
   menu.addEventListener('click', (event) => {
     if (event && event.target.classList.contains('menu-item')) {
@@ -31,6 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
           break;
         case 'timer':
           timer.trigger(5);
+          break;
+        case 'Change Style':
+          changeImage.trigger(); // фон-картинка
           break;
       }
     }
