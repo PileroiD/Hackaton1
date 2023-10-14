@@ -2,7 +2,7 @@ import { Timer } from './modules/timer.module';
 import { ClicksModule } from './modules/clicks.module';
 import { randomMassage } from  './modules/message.module'
 import { ContextMenu } from './menu';
-import './styles.css'
+import './styles.css';
 
 document.addEventListener('DOMContentLoaded', () => {
     const mainScope = document.querySelector('body'),
