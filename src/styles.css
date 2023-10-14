@@ -12,6 +12,7 @@ body {
     height: 100vh;
     width: 100%;
     padding: 2rem;
+    background: #110700;   
 }
 
 .menu {
@@ -22,6 +23,9 @@ body {
     border-radius: 5px;
     display: none;
     list-style: none;
+    box-shadow: 0px 0px 20px darkorange;
+    border: 2px solid darkorange;
+    border-radius: 15px;
 }
 
 .menu.open {
@@ -31,14 +35,14 @@ body {
 .menu .menu-item {
     padding: 8px 15px;
     font-size: 1rem;
-    color: #eee;
+    color: darkorange;
     cursor: pointer;
     transition: background-color .2s ease-in;
     border-radius: inherit;
 }
 
 .menu .menu-item:hover {
-    background: #343434;
+    background: #3f1504;
 }
 
 .result-modal {
@@ -48,24 +52,26 @@ body {
     width: 400px;
     height: 200px;
     padding: 20px;
-    background: #343434;
-    color: #fff;
+    background: #1b1a1a;
+    color: darkorange;
     margin: 0 auto;
     margin-top: 200px;
     font-size: 20px;
-    border: 4px solid gray;
-    border-radius: 15px
+    border: 4px solid darkorange;
+    border-radius: 15px;
+    position: absolute;
 }
 
 .result-modal.hiden {
-    display: none;
+    display: none;  
 }
 
 .divTimer {
+    position: absolute;
     width: 300px;
     height: 50px;
     background: #1b1a1a;
-    color: #fff;
+    color: darkorange;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,4 +81,22 @@ body {
     border-radius: 15px;
     bottom: 10px;
     right: 10px;
+    box-shadow: 0px 0px 20px darkorange;
+    border: 2px solid darkorange;
+}
+
+.img {
+    margin: auto;
+    background-image: url(../assets/bg_1.jpg);
+    background-size: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    height: 1000px;
+    width: 600px;
+
+    box-shadow: 0px 0px 20px darkorange;
+    border: 2px solid darkorange;
+    border-radius: 20px;
+
 }
