@@ -20,7 +20,7 @@ export class ContextMenu extends Menu {
     }
 
     if (winHeight - cY < 150) {
-      this.el.style.top = `${cY - 150}px`;
+      this.el.style.top = `${cY - 200}px`;
     } else {
       this.el.style.top = `${cY}px`;
     }
