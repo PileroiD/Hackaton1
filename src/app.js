@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (event && event.target.classList.contains('menu-item')) {
       switch (event.target.dataset.type) {
         case 'click':
-          clickFeature.trigger(3000);
+          clickFeature.trigger(3000, 1000);
           break;
         case 'timer':
           timer.trigger(5);
