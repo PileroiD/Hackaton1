@@ -11,7 +11,7 @@ export class EllipseShape extends Shape {
     this.strokeWidth = random(1, 20); 
     this.center = {
       x: (this.width - this.strokeWidth) / 2,
-      y: (this.height / 2 - this.strokeWidth) / 2,
+      y: (this.height - this.strokeWidth) / 2,
     };
       
     this.draw();
