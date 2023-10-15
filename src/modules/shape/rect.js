@@ -19,7 +19,7 @@ export class RectShape extends Shape {
       'http://www.w3.org/2000/svg',
       this.type
     );
-    this.path.setAttribute('stroke-width', '2');    
+    this.path.setAttribute('stroke-width', this.strokeWidth);    
     this.path.setAttribute('x', halfStrokeWidth);
     this.path.setAttribute('y', halfStrokeWidth);
     this.path.setAttribute('width', this.width - halfStrokeWidth);
