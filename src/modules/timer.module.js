@@ -40,7 +40,7 @@ export class Timer extends Module {
 				clearInterval(countdown);
 				showModal('Время истекло!');
 				this.divTimer.classList.add('divTimer--hidden');
-				
+
 			} else {
 				if (targetMilliseconds === 0) {
 					targetSeconds--;

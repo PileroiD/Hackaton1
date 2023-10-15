@@ -6,7 +6,7 @@ const CLOSE_BUTTON_TEMPLATE = `<button class="shape__close">
   </svg>
 </button>`;
 
-export class Shape {  
+export class Shape {
   constructor(x, y, method = 'random') {
     this.element = null;
     this.path = null;
@@ -17,7 +17,7 @@ export class Shape {
     };
     this.creationMethod = method;
     this.width = null;
-    this.height = null;    
+    this.height = null;
     this.fillColor = `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)})`;
     this.strokeColor = `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)})`;
     this.#create();
@@ -27,10 +27,10 @@ export class Shape {
     this.element = document.createElement('div');
     this.element.className = 'shape';
     this.element.innerHTML = CLOSE_BUTTON_TEMPLATE;
-    this.svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');    
-    this.element.append(this.svgElement);        
+    this.svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    this.element.append(this.svgElement);
     this.element.style.top = this.nullPoint.y + 'px';
-    this.element.style.left = this.nullPoint.x + 'px';    
+    this.element.style.left = this.nullPoint.x + 'px';
     this.closeButton = this.element.querySelector('.shape__close');
     this.closeButton.addEventListener('click', () => {
       this.remove()
@@ -40,12 +40,12 @@ export class Shape {
   draw() {
     this.svgElement.setAttribute('viewBox', `0 0 ${this.width} ${this.height}`);
     this.svgElement.setAttribute('width', this.width);
-    this.svgElement.setAttribute('height', this.height);    
+    this.svgElement.setAttribute('height', this.height);
     this.createPath();
-    this.svgElement.append(this.path);    
+    this.svgElement.append(this.path);
   }
 
-  createPath() {}
+  createPath() { }
 
   render() {
     document.body.append(this.element);

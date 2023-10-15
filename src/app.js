@@ -9,7 +9,6 @@ import { DevelopersInfoModule } from './modules/developersInfo.module';
 import './styles.css';
 
 export const contextMenuItem = new ContextMenu('#menu');
-console.log(contextMenuItem);
 
 document.addEventListener('DOMContentLoaded', () => {
   const mainScope = document.querySelector('body');
