@@ -2,7 +2,9 @@ import { Timer } from './modules/timer.module';
 import { ClicksModule } from './modules/clicks.module';
 import { ShapeModule } from './modules/shape.module';
 import { ContextMenu } from './menu';
+import { BackgroundModule } from './modules/background.module'; // фон-картинка
 import './styles.css';
+import { showForm, checkNumInputs, closeForm, clearInputs, showErrorForm } from './utils';
 
 document.addEventListener('DOMContentLoaded', () => {
   const mainScope = document.querySelector('body'),
@@ -17,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  
   const clickFeature = new ClicksModule('click', 'Click analytics');
   menu.append(clickFeature.toHTML());
 
@@ -27,14 +28,38 @@ document.addEventListener('DOMContentLoaded', () => {
   const shape = new ShapeModule('shape', 'Shape');
   menu.append(shape.toHTML());
 
+  // фон-картинка
+  const changeImage = new BackgroundModule('Change Style', 'Change Style');
+  menu.append(changeImage.toHTML());
+
   menu.addEventListener('click', (event) => {
     if (event && event.target.classList.contains('menu-item')) {
       switch (event.target.dataset.type) {
         case 'click':
-          clickFeature.trigger(3000);
+          clickFeature.trigger(3000, 1000);
           break;
         case 'timer':
-          timer.trigger(5);
+          showForm({text: "Укажите количество секунд для таймера"});
+          checkNumInputs('input');
+
+          const form = document.querySelector('form'),
+                input = form.querySelector('input'),
+                button = form.querySelector('button');
+
+          form.addEventListener('submit', event => {
+            event.preventDefault();
+
+            if (input.value && +input.value <= 60) {
+              closeForm();
+              timer.trigger(+input.value);
+              clearInputs('input');
+            } else {
+              showErrorForm({form, input, button});
+            }
+          });
+          break;
+        case 'Change Style':
+          changeImage.trigger(); // фон-картинка
           break;
         case 'shape':
           const targetParent = event.target.offsetParent;
