@@ -19,11 +19,11 @@ export class RectShape extends Shape {
       'http://www.w3.org/2000/svg',
       this.type
     );
-    this.path.setAttribute('stroke-width', '2');    
+    this.path.setAttribute('stroke-width', this.strokeWidth);    
     this.path.setAttribute('x', halfStrokeWidth);
     this.path.setAttribute('y', halfStrokeWidth);
-    this.path.setAttribute('width', this.width - halfStrokeWidth);
-    this.path.setAttribute('height', this.height - halfStrokeWidth);
+    this.path.setAttribute('width', this.width - this.strokeWidth);
+    this.path.setAttribute('height', this.height - this.strokeWidth);
     this.path.setAttribute('stroke', this.strokeColor);
     this.path.setAttribute('fill', this.fillColor);
   }

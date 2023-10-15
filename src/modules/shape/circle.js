@@ -18,8 +18,8 @@ export class CircleShape extends Shape {
       'http://www.w3.org/2000/svg',
       this.type
     );
-    this.path.setAttribute('stroke-width', '2');
-    this.path.setAttribute('stroke-color', this.strokeColor);
+    this.path.setAttribute('stroke-width', this.strokeWidth);
+    this.path.setAttribute('stroke', this.strokeColor);
     this.path.setAttribute('fill', this.fillColor);
     const center =  this.radius + this.strokeWidth / 2;
     this.path.setAttribute('cx', center);

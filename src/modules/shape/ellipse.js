@@ -11,7 +11,7 @@ export class EllipseShape extends Shape {
     this.strokeWidth = random(1, 20); 
     this.center = {
       x: (this.width - this.strokeWidth) / 2,
-      y: (this.height / 2 - this.strokeWidth) / 2,
+      y: (this.height - this.strokeWidth) / 2,
     };
       
     this.draw();
@@ -22,7 +22,7 @@ export class EllipseShape extends Shape {
       'http://www.w3.org/2000/svg',
       this.type
     );
-    this.path.setAttribute('stroke-width', '2');    
+    this.path.setAttribute('stroke-width', this.strokeWidth);    
     this.path.setAttribute('cx', this.center.x);
     this.path.setAttribute('cy', this.center.y);
     this.path.setAttribute('rx', this.center.x - this.strokeWidth / 2);
