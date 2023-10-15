@@ -3,7 +3,7 @@ import { ContextMenu } from '../menu'
 import { showModal } from '../utils';
 import { random } from '../utils'
 
-export class randomMassage extends Module {
+export class RandomMassage extends Module {
     constructor(type, text) {
         super(type, text);
     }

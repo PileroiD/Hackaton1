@@ -1,6 +1,7 @@
 import { Timer } from './modules/timer.module';
 import { ClicksModule } from './modules/clicks.module';
-import { randomMassage } from  './modules/message.module'
+import { RandomMassage } from  './modules/message.module';
+import { RandomSound } from './modules/sound.module';
 import { ContextMenu } from './menu';
 import './styles.css';
 
@@ -24,8 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const timer = new Timer('timer', 'Timer');
     menu.append(timer.toHTML());
 
-    const randomMessage = new randomMassage('message', 'Random message');
+    const randomMessage = new RandomMassage('message', 'Random message');
     menu.append(randomMessage.toHTML());
+
+    const randomSound = new RandomSound('sound', 'Random sound')
+    menu.append(randomSound.toHTML());
 
     menu.addEventListener('click', event => {
         if (event && event.target.classList.contains('menu-item')) {
@@ -38,6 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     break;
                 case 'message':
                     randomMessage.trigger()
+                    break;
+                case 'sound':
+                    randomSound.trigger()
                     break;
             }
         }
