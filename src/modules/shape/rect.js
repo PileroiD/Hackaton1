@@ -22,8 +22,8 @@ export class RectShape extends Shape {
     this.path.setAttribute('stroke-width', this.strokeWidth);    
     this.path.setAttribute('x', halfStrokeWidth);
     this.path.setAttribute('y', halfStrokeWidth);
-    this.path.setAttribute('width', this.width - halfStrokeWidth);
-    this.path.setAttribute('height', this.height - halfStrokeWidth);
+    this.path.setAttribute('width', this.width - this.strokeWidth);
+    this.path.setAttribute('height', this.height - this.strokeWidth);
     this.path.setAttribute('stroke', this.strokeColor);
     this.path.setAttribute('fill', this.fillColor);
   }
