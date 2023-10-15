@@ -1,5 +1,4 @@
 import { Module } from '../core/module';
-import { ContextMenu } from '../menu';
 import { random } from '../utils';
 
 export class BackgroundModule extends Module {
@@ -8,9 +7,6 @@ export class BackgroundModule extends Module {
   }
 
   trigger() {
-    const contextMenu = new ContextMenu('#menu');
-    contextMenu.close();
-    
     const changeImage = document.querySelector('.img');
     changeImage.style = `background-image: url(../assets/bg_${random(1, 12)}.jpg) `;
 
