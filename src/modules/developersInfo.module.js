@@ -13,7 +13,7 @@ export class DevelopersInfoModule extends Module {
         const mainDiv = document.querySelector('.developersInfo');
         mainDiv.classList.remove('hiden');
 
-        const token = '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';
+        const token = '';
         const usernames = [
             'PileroiD',
             'DenisKardash',

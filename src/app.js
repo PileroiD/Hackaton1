@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
           shape.nullPoint.x = event.target.offsetParent.getBoundingClientRect().x;
           shape.nullPoint.y = event.target.offsetParent.getBoundingClientRect().y;
           shape.trigger();
+          break;
         case 'developersInfo':
           developersInfo.trigger();
           break;
