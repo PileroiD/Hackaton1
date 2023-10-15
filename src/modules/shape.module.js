@@ -45,8 +45,7 @@ export class ShapeModule extends Module {
   }
 
   getNullPoint() {
-    this.nullPoint = contextMenuItem.coords;
-    console.log(this.nullPoint);
+    this.nullPoint = contextMenuItem.coords;    
   }
 
 }
