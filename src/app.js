@@ -2,6 +2,7 @@ import { Timer } from './modules/timer.module';
 import { ClicksModule } from './modules/clicks.module';
 import { ContextMenu } from './menu';
 import './styles.css';
+import { showForm, checkNumInputs, closeForm, clearInputs, showErrorForm } from './utils';
 
 document.addEventListener('DOMContentLoaded', () => {
   const mainScope = document.querySelector('body'),
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const timer = new Timer('timer', 'Timer');
   menu.append(timer.toHTML());
 
+  
   menu.addEventListener('click', (event) => {
     if (event && event.target.classList.contains('menu-item')) {
       switch (event.target.dataset.type) {
@@ -30,7 +32,24 @@ document.addEventListener('DOMContentLoaded', () => {
           clickFeature.trigger(3000);
           break;
         case 'timer':
-          timer.trigger(5);
+          showForm({text: "Укажите количество секунд для таймера"});
+          checkNumInputs('input');
+
+          const form = document.querySelector('form'),
+                input = form.querySelector('input'),
+                button = form.querySelector('button');
+
+          form.addEventListener('submit', event => {
+            event.preventDefault();
+
+            if (input.value && +input.value <= 60) {
+              closeForm();
+              timer.trigger(+input.value);
+              clearInputs('input');
+            } else {
+              showErrorForm({form, input, button});
+            }
+          });
           break;
       }
     }
