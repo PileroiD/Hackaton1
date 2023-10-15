@@ -223,10 +223,6 @@ footer {
     display: none;
 }
 
-.github-links {
-    display: flex;
-}
-
 .developersInfo .developer-item {
     display: flex;
     flex-direction: column;

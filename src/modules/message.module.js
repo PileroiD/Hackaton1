@@ -12,15 +12,15 @@ export class RandomMassage extends Module {
         'А в какой ветке ты делаешь?', 
         'Смёрджил в девелоп', 
         'Надо немного покумекать', 
-        "Я замержила в develop", 
-        "Давай тогда новую ветку делать",
+        'Я замержила в develop', 
+        'Давай тогда новую ветку делать',
         'А в девелоп всё пушится нормально?',
         'Пуш конечно',
         'Мержу?'
     ];
 
     const divMessage = document.createElement('div');
-    divMessage.classList.add("divTimer");
+    divMessage.classList.add('divTimer');
     let randomIndex = random(0, 7);
     divMessage.textContent = messageList[randomIndex];
     document.body.append(divMessage);
