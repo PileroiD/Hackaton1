@@ -146,7 +146,6 @@ body {
     box-shadow: 0px 0px 20px darkorange;
     border: 2px solid darkorange;
     border-radius: 20px;
-
     transition: 0.3s;
 }
 
@@ -159,7 +158,39 @@ footer {
     font-family: 'Roboto', sans-serif;
     text-align: center;
     text-shadow: 0px 0px 5px darkorange;
-    padding-top: 20px;
-      
+    padding-top: 20px;      
+}
 
+.shape {
+    position: absolute;    
+    transition: filter 0.4s, opacity 0.4s;
+    z-index: 2;        
+}
+
+.shape__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.4s;
+    z-index: 2;
+}
+
+.shape__close:hover path {
+    fill: red;
+}
+
+.shape:hover {
+    filter: drop-shadow(0px 0px 20px darkorange);
+}
+
+.shape:hover .shape__close {
+    opacity: 1;
+}
+
+.shape--hide {
+    opacity: 0;
 }
