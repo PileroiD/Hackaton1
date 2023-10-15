@@ -40,6 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
           clickFeature.trigger(3000, 1000);
           break;
         case 'timer':
+          const contextMenu = new ContextMenu("#menu");
+          contextMenu.close();
+          
           showForm({text: "Укажите количество секунд для таймера"});
           checkNumInputs('input');
 
