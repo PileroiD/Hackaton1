@@ -1,13 +1,13 @@
-import { Shape } from "./shape";
-import { random } from "../../utils";
+import { Shape } from './shape';
+import { random } from '../../utils';
 
-export class CircleShape extends Shape {  
-    
+export class CircleShape extends Shape {
+
   constructor(x, y) {
-    super(x, y);    
+    super(x, y);
     this.type = 'circle';
-    this.radius = random(100, 200);       
-    this.strokeWidth = random(1, 20); 
+    this.radius = random(100, 200);
+    this.strokeWidth = random(1, 20);
     this.path = null;
     this.#setSize();
     this.draw();
@@ -21,7 +21,7 @@ export class CircleShape extends Shape {
     this.path.setAttribute('stroke-width', this.strokeWidth);
     this.path.setAttribute('stroke', this.strokeColor);
     this.path.setAttribute('fill', this.fillColor);
-    const center =  this.radius + this.strokeWidth / 2;
+    const center = this.radius + this.strokeWidth / 2;
     this.path.setAttribute('cx', center);
     this.path.setAttribute('cy', center);
     this.path.setAttribute('r', this.radius);
@@ -29,7 +29,7 @@ export class CircleShape extends Shape {
 
   #setSize() {
     this.width = this.radius * 2 + this.strokeWidth;
-    this.height = this.width;    
+    this.height = this.width;
   }
 
 }

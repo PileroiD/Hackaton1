@@ -1,18 +1,15 @@
 import { showModal } from '../utils';
 import { Module } from '../core/module';
-import { ContextMenu } from '../menu';
 
 export class ClicksModule extends Module {
   constructor(type, text) {
     super(type, text);
   }
 
-    trigger(seconds, timeForPreparingModal) {
-        const contextMenu = new ContextMenu("#menu");
-        contextMenu.close();
-        showModal("Покликайте по экрану", 0, timeForPreparingModal);
+  trigger(seconds = 3000, timeForPreparingModal = 1000) {
+    showModal('Покликайте по экрану', 0, timeForPreparingModal);
 
-        let counter = 0;
+    let counter = 0;
 
     function clickHandler() {
       counter++;
@@ -21,9 +18,9 @@ export class ClicksModule extends Module {
     document.body.addEventListener('click', clickHandler);
     const time = seconds;
 
-        setTimeout(() => {
-            document.body.removeEventListener('click', clickHandler);
-            showModal(`За ${String(time).slice(0, 1)} секунды вы сделали кликов`, counter, time);
-        }, time + timeForPreparingModal);
-    }
+    setTimeout(() => {
+      document.body.removeEventListener('click', clickHandler);
+      showModal(`За ${String(time).slice(0, 1)} секунды вы сделали кликов`, counter, time);
+    }, time + timeForPreparingModal);
+  }
 }
