@@ -3,6 +3,7 @@ import { ClicksModule } from './modules/clicks.module';
 import { ShapeModule } from './modules/shape.module';
 import { ContextMenu } from './menu';
 import { BackgroundModule } from './modules/background.module'; // фон-картинка
+import { DevelopersInfoModule } from './modules/developersInfo.module';
 import './styles.css';
 import { showForm, checkNumInputs, closeForm, clearInputs, showErrorForm } from './utils';
 
@@ -32,6 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const changeImage = new BackgroundModule('Change Style', 'Change Style');
   menu.append(changeImage.toHTML());
 
+  // module about developers
+  const developersInfo = new DevelopersInfoModule('developersInfo', 'Developers');
+  menu.append(developersInfo.toHTML());
+  
   menu.addEventListener('click', (event) => {
     if (event && event.target.classList.contains('menu-item')) {
       switch (event.target.dataset.type) {
@@ -39,6 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
           clickFeature.trigger(3000, 1000);
           break;
         case 'timer':
+          const contextMenu = new ContextMenu("#menu");
+          contextMenu.close();
+          
           showForm({text: "Укажите количество секунд для таймера"});
           checkNumInputs('input');
 
@@ -66,6 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
           shape.nullPoint.x = event.target.offsetParent.getBoundingClientRect().x;
           shape.nullPoint.y = event.target.offsetParent.getBoundingClientRect().y;
           shape.trigger();
+        case 'developersInfo':
+          developersInfo.trigger();
           break;
       }
     }
